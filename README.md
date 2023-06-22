@@ -47,7 +47,7 @@ O programa também usa o algoritmo de ordenação da biblioteca padrão C++ (std
 
 <div align="justify">
 	
-Nesta seção, apresentamos os resultados de experimentos envolvendo três tipos de entradas diferentes: "entrada.txt", "entrada2.txt", "entrada2.txt". O objetivo dos experimentos é comparar o desempenho e a eficácia desse algoritmo em diferentes tipos de entrada e diversos cenários, utilizando uma máquina com especificações definidas.
+Nesta seção, apresentamos os resultados de experimentos envolvendo três tipos de entradas diferentes: [<code>entrada.txt</code>](), [<code>entrada2.txt</code>](), [<code>entrada3.txt</code>](). O objetivo dos experimentos é comparar o desempenho e a eficácia desse algoritmo em diferentes tipos de entrada e diversos cenários, utilizando uma máquina com especificações definidas.
 
 Os experimentos foram conduzidos em uma máquina com as seguintes especificações:
 
@@ -56,7 +56,7 @@ Os experimentos foram conduzidos em uma máquina com as seguintes especificaçõ
 - Sistema Operacional: Ubuntu Linux;
 - Linguagem de Programação: C++.
 
-Para cada entrada, foram executadas 10 iterações utilizando com as seguintes entradas [<code>entrada.txt</code>](https://github.com/celzin/Corretor-De-Texto/dataset/). A entrada consiste em (...). Essa entrada foi mantida constante em durante as iterações proposta para garantir a comparabilidade dos resultados. Durante cada iteração, o tempo de execução do algoritmo, a solução encontrada foi registrada em um arquivo <code>output.data</code>. Os resultados obtidos nos experimentos foram analisados com auxílio da tabela abaixo.
+Para cada entrada, foram executadas 10 iterações utilizando com cada uma das entradas apresentadas. A entrada consiste em (...). Essa entrada foi mantida constante em durante as iterações proposta para garantir a comparabilidade dos resultados. Durante cada iteração, o tempo de execução do algoritmo, a solução encontrada foi registrada em um arquivo <code>output.data</code>. Os resultados obtidos nos experimentos foram analisados com auxílio da tabela abaixo.
 
 </div>
 
