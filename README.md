@@ -147,6 +147,12 @@ Em resumo, (...)
 
 </div>
 
+# Conclusão 🎯
+
+<div align="justify">
+	
+</div>
+
 # Compilação e Execução 🔄
 
 <p align="justify">
