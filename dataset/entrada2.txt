@@ -1,0 +1,33 @@
+Crawler, é um software desenvolvido para realizar uma varredura na internet de maneira sistemática através de informação
+vista como relevante a sua função. Eles capturam os textos das páginas e cadastram os links encontrados e assim
+possibilitam encontrar novas páginas. São uma das bases das Search Engines, eles são os responsáveis pela indexação
+dos sites, armazenando-os na base de dados dos motores de busca. Também são conhecidos como Spider ou Bot (robô).
+
+O processo que um Web crawler executa é chamado de Web crawling ou sidering. Muitos sites, em particular os motores
+de busca, usam crawlers para manter uma base de dados atualizada. Os Web crawlers são principalmente utilizados para
+criar uma cópia de todas as páginas visitadas para um pós-processamento por um motor de busca que irá indexar as páginas 
+baixadas para prover buscas mais rápidas. Crawlers também podem ser usados para tarefas de manutenção automatizadas
+em um Web site, como checar os links ou validar o código HTML. Os crawlers também podem ser usados para obter tipos
+específicos de informações em páginas Web, como minerar endereços de email (mais comumente para spam).
+
+Spider, também conhecido como robô, robot, bot ou crawler, são programas usados pelos mecanismos de busca para explorar
+a Internet de maneira automática e fazer download de conteúdo web de sites. De forma metódica, não expõe o conteúdo que
+julga irrelevante no código fornte dos sites, e armazena o reste em seu banco de dados. Desse modo, os mecanismos de busca
+baseados em robôs (spider ou crawler) que vasculham a Internet atrás de informações e classificam as buscas de acordo
+com os links e também os conteúdos encontrados nas páginas de busca, como é o caso do maior portal de busca da web, o Google.
+
+Deste modo, qualquer página precisa ser rastreada pelo robô e assim, poder aparecer nos resultados de bsuca dos mecanismos em questão.
+
+Segundo Thurow (2003), os robôs executam três ações básicas:
+
+Primeiro eles acham as páginas do site (processo chamado spidering ou crawling) e constroem uma lista de palavras e frases;
+
+Com a lista criada, fazem um banco de dados e encontram as páginas exatas que eles devem procurar, inserindo o site vasculhado no banco de
+dados geral organizado pelas características encontradas em sua página. A máquina que insere o site no banco de dados se chama indexer;
+
+Depois disso, o robô já está apto a encontrar esse site quando o usuário final digitar na busca uma palavra ou expressão relativa ao conteúdo
+encontrado no site. Essa etapa é chamada de query processor;
+
+Como podemos perceber, por trás de qualquer busca realizada na Internet, há uma série de mecanismos que trabalham unidos
+para fornecer um resultado satisfatório ao usuário. O processo parece um tanto complexo, no entanto, nada perceptível a nós
+meros buscadores de informação.
