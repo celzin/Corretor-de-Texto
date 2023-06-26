@@ -32,7 +32,9 @@ int main(){
     analyzeWords(wordInfo);
     endTime = clock(); // End measuring time
     cout << "Analysis completed in " << double(endTime - startTime) / CLOCKS_PER_SEC << " seconds.\n";
-    output << "3) Occurrence of expressions:" << endl << endl;
+    cout << "3) Occurrence of expressions:" << endl << endl;
+    output << "Occurrence of expressions:" << endl << endl;
+    startTime = clock(); // Start measuring time
     for(auto &expressionInfo : expressionsInfo){
         string expression = expressionInfo.first;
         WordInfo info = expressionInfo.second;
@@ -41,11 +43,14 @@ int main(){
             for(int line : info.lines){
                 output << line << " ";
             }
+
             output << endl;
         }
-    }
 
+    }
     output.close();
+    endTime = clock(); // End measuring time
+    cout << "Analysis completed in " << double(endTime - startTime) / CLOCKS_PER_SEC << " seconds.\n";
 
     return 0;
 }
