@@ -53,9 +53,9 @@ void Operacao::processParagraph(string &paragraph, int &paragraphCount, int &par
         int excludingStopWords = sentence.empty() ? 0 : countWords(sentence, false);
         if (!sentence.empty() && totalWords) {
             sentenceCount++;
-            output << "Sentence " << sentenceCount << " has " << totalWords
-                << " words including stop words, and " << excludingStopWords
-                << " words excluding stop words.\n";
+            output << "Sentence: " << sentenceCount << "    Number of words with stop words: " << totalWords
+                << "     Number of words without stop words: " << excludingStopWords
+                << "\n";
         }
 
     }
@@ -70,8 +70,8 @@ void Operacao::processParagraph(string &paragraph, int &paragraphCount, int &par
         }
     }
 
-    output << "Paragraph " << paragraphCount++ << " starting at line " << paragraphStart << " and ending at line " << lineCount - 1
-        << " has " << sentenceCount << " sentences.\n\n";
+    output << "Paragraph: " << paragraphCount++ << " Start Line: " << paragraphStart << " End Line: " << lineCount - 1
+        << " Sentences: " << sentenceCount << "\n\n";
     paragraph.clear();
     paragraphStart = lineCount + 1;
 
