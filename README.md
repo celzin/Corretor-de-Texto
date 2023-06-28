@@ -61,6 +61,12 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 </div>
 
 <table align="center">
+<thead>
+  <tr>
+    <th class="tg-0lax" colspan="4">Análise dos Parágrafos do Texto</th>
+  </tr>
+</thead>
+<tbody>
   <tr>
     <th align="center">Medições</th>
     <th align="center">Entrada 1 (Tempo em ms)</th>
@@ -139,6 +145,7 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
     <td align="center">0.00</td>
     <td align="center">0.00</td>
   </tr>
+</tbody>
 </table>
 
 <div align="justify">
