@@ -284,81 +284,81 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (s)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
-    <th align="center">Análise das Ocorrências de Expressões (s)</th>
+    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
+    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
   </tr>
   <tr>
     <td align="center">1</td>
-    <td align="center">0.349304</td>
-    <td align="center">0.103082</td>
-    <td align="center">2.0e<sup>-05</sup></td>
+    <td align="center">336.649</td>
+    <td align="center">114.931</td>
+    <td align="center">0.024</td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td align="center">0.349849</td>
-    <td align="center">0.102915</td>
-    <td align="center">1.7e<sup>-05</sup></td>
+    <td align="center">340.445</td>
+    <td align="center">88.252</td>
+    <td align="center">0.017</td>
   </tr>
   <tr>
     <td align="center">3</td>
-    <td align="center">0.352253</td>
-    <td align="center">0.09416</td>
-    <td align="center">1.6e<sup>-05</sup></td>
+    <td align="center">350.193</td>
+    <td align="center">104.29</td>
+    <td align="center">0.021</td>
   </tr>
   <tr>
     <td align="center">4</td>
-    <td align="center">0.330274</td>
-    <td align="center">0.121527</td>
-    <td align="center">1.8e<sup>-05</sup></td>
+    <td align="center">332.436</td>
+    <td align="center">95.687</td>
+    <td align="center">0.016</td>
   </tr>
   <tr>
     <td align="center">5</td>
-    <td align="center">0.343542</td>
-    <td align="center">0.106081</td>
-    <td align="center">1.9e<sup>-05</sup></td>
+    <td align="center">354.738</td>
+    <td align="center">106.540</td>
+    <td align="center">0.019</td>
   </tr>
   <tr>
     <td align="center">6</td>
-    <td align="center">0.359591</td>
-    <td align="center">0.110430</td>
-    <td align="center">1.9e<sup>-05</sup></td>
+    <td align="center">343.466</td>
+    <td align="center">107.924</td>
+    <td align="center">0.016</td>
   </tr>
   <tr>
     <td align="center">7</td>
-    <td align="center">0.336606</td>
-    <td align="center">0.120137</td>
-    <td align="center">2.0e<sup>-05</sup></td>
+    <td align="center">340.969</td>
+    <td align="center">104.928</td>
+    <td align="center">0.019</td>
   </tr>
   <tr>
     <td align="center">8</td>
-    <td align="center">0.343147</td>
-    <td align="center">0.095987</td>
-    <td align="center">1.7e<sup>-05</sup></td>
+    <td align="center">355.495</td>
+    <td align="center">111.073</td>
+    <td align="center">0.021</td>
   </tr>
   <tr>
     <td align="center">9</td>
-    <td align="center">0.330370</td>
-    <td align="center">0.096212</td>
-    <td align="center">1.5e<sup>-05</sup></td>
+    <td align="center">320.295</td>
+    <td align="center">92.582</td>
+    <td align="center">0.019</td>
   </tr>
   <tr>
     <td align="center">10</td>
-    <td align="center">0.349743</td>
-    <td align="center">0.100870</td>
-    <td align="center">1.6e<sup>-05</sup></td>
+    <td align="center">319.853</td>
+    <td align="center">90.901</td>
+    <td align="center">0.016</td>
   </tr>
   <tr>
     <td align="center">Média</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">339.148</td>
+    <td align="center">101.781</td>
+    <td align="center">0.018</td>
   </tr>
   <tr>
     <td align="center">Desvio Padrão</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">10.262</td>
+    <td align="center">8.528</td>
+    <td align="center">0.002</td>
   </tr>
 </tbody>
 </table>
