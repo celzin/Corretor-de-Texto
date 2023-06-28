@@ -60,7 +60,46 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 
 </div>
 
-<table align="center">
+<script>
+    function calcularMediaDesvioPadrao() {
+      var tabela = document.getElementById("tabelaValores");
+      var tbody = tabela.getElementsByTagName("tbody")[0];
+      var linhas = tbody.getElementsByTagName("tr");
+
+      var valores = [];
+      var numColunas = linhas[0].getElementsByTagName("td").length;
+
+      // Extrair os valores da tabela
+      for (var i = 1; i < linhas.length - 2; i++) {
+        var colunas = linhas[i].getElementsByTagName("td");
+        for (var j = 1; j < numColunas; j++) {
+          var valor = parseFloat(colunas[j].innerText);
+          valores.push(valor);
+        }
+      }
+
+      // Calcular a média
+      var soma = valores.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+      var media = soma / valores.length;
+
+      // Calcular o desvio padrão
+      var somaQuadrados = valores.reduce(function (a, b) {
+        return a + Math.pow(b - media, 2);
+      }, 0);
+      var desvioPadrao = Math.sqrt(somaQuadrados / valores.length);
+
+      // Atualizar os valores na tabela
+      var mediaCell = linhas[linhas.length - 2].getElementsByTagName("td")[1];
+      mediaCell.innerText = media.toFixed(6);
+
+      var desvioPadraoCell = linhas[linhas.length - 1].getElementsByTagName("td")[1];
+      desvioPadraoCell.innerText = desvioPadrao.toFixed(6);
+    }
+  </script>
+
+<table id="tabelaValores" align="center">
 <thead>
   <tr>
     <th class="tg-0lax" colspan="4">Entrada 1 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada.txt">entrada.txt</a> ) </th>
@@ -187,7 +226,7 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
   </tr>
   <tr>
     <td align="center">5</td>
-    <td align="center">0.003547/td>
+    <td align="center">0.003547</td>
     <td align="center">0.001221</td>
     <td align="center">7.0e<sup>-05</sup></td>
   </tr>
@@ -263,7 +302,7 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
   </tr>
   <tr>
     <td align="center">3</td>
-    <td align="center">0.352253/td>
+    <td align="center">0.352253</td>
     <td align="center">0.09416</td>
     <td align="center">1.6e<sup>-05</sup></td>
   </tr>
