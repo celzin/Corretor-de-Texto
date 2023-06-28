@@ -69,9 +69,9 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
-    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
+    <th align="center">Análise dos Parágrafos do Texto (s)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
+    <th align="center">Análise das Ocorrências de Expressões (s)</th>
   </tr>
   <tr>
     <td align="center">1</td>
@@ -151,15 +151,15 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <table align="center">
 <thead>
   <tr>
-    <th class="tg-0lax" colspan="4">Entrada 2 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada2.txt">entrada.txt</a> ) </th>
+    <th class="tg-0lax" colspan="4">Entrada 2 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada2.txt">entrada2.txt</a> ) </th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
-    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
+    <th align="center">Análise dos Parágrafos do Texto (s)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
+    <th align="center">Análise das Ocorrências de Expressões (s)</th>
   </tr>
   <tr>
     <td align="center">1</td>
@@ -239,15 +239,15 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <table align="center">
 <thead>
   <tr>
-    <th class="tg-0lax" colspan="4">Entrada e ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada3.txt">entrada.txt</a> ) </th>
+    <th class="tg-0lax" colspan="4">Entrada 3 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada3.txt">entrada3.txt</a> ) </th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
-    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
+    <th align="center">Análise dos Parágrafos do Texto (s)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
+    <th align="center">Análise das Ocorrências de Expressões (s)</th>
   </tr>
   <tr>
     <td align="center">1</td>
