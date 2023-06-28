@@ -63,75 +63,251 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <table align="center">
 <thead>
   <tr>
-    <th class="tg-0lax" colspan="4">Análise dos Parágrafos do Texto</th>
+    <th class="tg-0lax" colspan="4">Entrada 1 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada.txt">entrada.txt</a> ) </th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Entrada 1 (Tempo em ms)</th>
-    <th align="center">Entrada 2 (Tempo em ms)</th>
-    <th align="center">Entrada 3 (Tempo em ms)</th>
+    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
+    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
   </tr>
   <tr>
     <td align="center">1</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.002492</td>
+    <td align="center">0.001284</td>
+    <td align="center">2.6e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.003912</td>
+    <td align="center">0.001199</td>
+    <td align="center">1.1e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">3</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.003998</td>
+    <td align="center">0.001201</td>
+    <td align="center">1.1e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">4</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.002420</td>
+    <td align="center">0.001316</td>
+    <td align="center">1.3e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">5</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.002625</td>
+    <td align="center">0.001034</td>
+    <td align="center">1.2e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">6</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.002595</td>
+    <td align="center">0.001470</td>
+    <td align="center">1.5e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">7</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.003787</td>
+    <td align="center">0.001248</td>
+    <td align="center">1.7e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">8</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
-    <td align="center">0.00</td>
+    <td align="center">0.004253</td>
+    <td align="center">0.001274</td>
+    <td align="center">1.3e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">9</td>
+    <td align="center">0.002500</td>
+    <td align="center">0.001265</td>
+    <td align="center">1.3e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">0.003926</td>
+    <td align="center">0.001254</td>
+    <td align="center">1.2e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">Média</td>
     <td align="center">0.00</td>
     <td align="center">0.00</td>
     <td align="center">0.00</td>
   </tr>
   <tr>
+    <td align="center">Desvio Padrão</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+</tbody>
+</table>
+
+<table align="center">
+<thead>
+  <tr>
+    <th class="tg-0lax" colspan="4">Entrada 2 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada2.txt">entrada.txt</a> ) </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th align="center">Medições</th>
+    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
+    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">0.002383</td>
+    <td align="center">0.000965</td>
+    <td align="center">6.0<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td align="center">0.003356</td>
+    <td align="center">0.001253</td>
+    <td align="center">7.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td align="center">0.004961</td>
+    <td align="center">0.001312</td>
+    <td align="center">7.0<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td align="center">0.03833</td>
+    <td align="center">0.001219</td>
+    <td align="center">8.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td align="center">0.003547/td>
+    <td align="center">0.001221</td>
+    <td align="center">7.0e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">6</td>
+    <td align="center">0.004578</td>
+    <td align="center">0.001316</td>
+    <td align="center">8.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">7</td>
+    <td align="center">0.004837</td>
+    <td align="center">0.001253</td>
+    <td align="center">6.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">8</td>
+    <td align="center">0.003222</td>
+    <td align="center">0.001320</td>
+    <td align="center">9.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">9</td>
+    <td align="center">0.003085</td>
+    <td align="center">0.001251</td>
+    <td align="center">8.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
     <td align="center">10</td>
+    <td align="center">0.004562</td>
+    <td align="center">0.001286</td>
+    <td align="center">7.0e<sup>-06</sup></td>
+  </tr>
+  <tr>
+    <td align="center">Média</td>
     <td align="center">0.00</td>
     <td align="center">0.00</td>
     <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">Desvio Padrão</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+</tbody>
+</table>
+
+<table align="center">
+<thead>
+  <tr>
+    <th class="tg-0lax" colspan="4">Entrada e ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada3.txt">entrada.txt</a> ) </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th align="center">Medições</th>
+    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
+    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">0.349304</td>
+    <td align="center">0.103082</td>
+    <td align="center">2.0e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td align="center">0.349849</td>
+    <td align="center">0.102915</td>
+    <td align="center">1.7e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td align="center">0.352253/td>
+    <td align="center">0.09416</td>
+    <td align="center">1.6e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td align="center">0.330274</td>
+    <td align="center">0.121527</td>
+    <td align="center">1.8e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td align="center">0.343542</td>
+    <td align="center">0.106081</td>
+    <td align="center">1.9e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">6</td>
+    <td align="center">0.359591</td>
+    <td align="center">0.110430</td>
+    <td align="center">1.9e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">7</td>
+    <td align="center">0.336606</td>
+    <td align="center">0.120137</td>
+    <td align="center">2.0e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">8</td>
+    <td align="center">0.343147</td>
+    <td align="center">0.095987</td>
+    <td align="center">1.7e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">9</td>
+    <td align="center">0.330370</td>
+    <td align="center">0.096212</td>
+    <td align="center">1.5e<sup>-05</sup></td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">0.349743</td>
+    <td align="center">0.100870</td>
+    <td align="center">1.6e<sup>-05</sup></td>
   </tr>
   <tr>
     <td align="center">Média</td>
