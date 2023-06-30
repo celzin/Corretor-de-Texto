@@ -324,9 +324,54 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 </tbody>
 </table>
 
+<table align="center">
+<thead>
+  <tr>
+    <th class="tg-0lax" colspan="5">Tempo Total das Médias</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th align="center">Tipo de Análise</th>
+    <<th align="center">Entrada 1</th>
+    <th align="center">Entrada 2</th>
+    <th align="center">Entrada 3</th>
+    <th align="center">Entrada 4</th>
+  </tr>
+  <tr>
+    <td align="center">Análise dos Parágrafos do Texto (ms)</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">Análise dos Termos Não-Stop-Words (ms)</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">Análise das Ocorrências de Expressões (ms)</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Tempo Total</b></td>
+    <td align="center"><b>0.00</b></td>
+    <td align="center"><b>0.00</b></td>
+    <td align="center"><b>0.00</b></td>
+    <td align="center"><b>0.00</b></td>
+  </tr>
+</tbody>
+</table>
+
 <div align="justify">
 	
-Em resumo, (...)
+Em resumo, ...
 
 </div>
 
