@@ -333,7 +333,7 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Tipo de Análise</th>
-    <<th align="center">Entrada 1</th>
+    <th align="center">Entrada 1</th>
     <th align="center">Entrada 2</th>
     <th align="center">Entrada 3</th>
     <th align="center">Entrada 4</th>
