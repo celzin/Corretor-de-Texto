@@ -370,7 +370,7 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 
 <div align="justify">
 	
-Em resumo, ...
+Em resumo, os resultados dos experimentos mostram que o Corretor de Texto proposto é eficaz na detecção de erros ortográficos e gramaticais, bem como na identificação de palavras de parada. No entanto, é importante levar em consideração que os resultados podem variar dependendo do tipo de texto e das características específicas do problema.
 
 </div>
 
