@@ -5,6 +5,16 @@
   <img align="center" alt="C++" src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
 </div><br/>
 
+## Wiki do Projeto 📚
+
+<div align="justify">
+
+Para obter informações mais detalhadas sobre o projeto acesse a [Wiki](https://github.com/celzin/Corretor-de-Texto/wiki). 
+
+Lá, será encontrado a documentação completa, instruções de execução e detalhes sobre as estruturas de dados e algoritmos utilizados, dentre outros aspectos relevantes do projeto.
+
+</div>
+
 # Apresentação do Problema 📝
 <div align="justify">
   
