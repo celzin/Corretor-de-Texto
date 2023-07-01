@@ -9,7 +9,7 @@
 
 <div align="justify">
 
-Para obter informações mais detalhadas sobre o projeto acesse a [Wiki](https://github.com/celzin/Corretor-de-Texto/wiki). 
+Para obter informações mais detalhadas sobre o projeto acesse a [**Wiki**](https://github.com/celzin/Corretor-de-Texto/wiki). 
 
 Lá, será encontrado a documentação completa, instruções de execução e detalhes sobre as estruturas de dados e algoritmos utilizados, dentre outros aspectos relevantes do projeto.
 
