@@ -377,7 +377,15 @@ Em resumo, ...
 # Conclusão 🎯
 
 <div align="justify">
-	
+
+Em conclusão, o projeto de Corretor de Texto apresentado oferece um conjunto de ferramentas e recursos que podem ajudar os usuários de diversas maneiras. Ao utilizar esse corretor, os usuários podem aprimorar a qualidade de seus textos, melhorar a gramática e ortografia, além de aperfeiçoar a clareza e a coesão do conteúdo escrito.
+
+Com o Corretor de Texto, os usuários têm acesso a um algoritmo eficiente que é capaz de identificar e sugerir correções para erros comuns, como erros ortográficos, concordância verbal, uso adequado de pontuação e estruturação de frases. Essa ferramenta pode ser particularmente útil para estudantes, escritores, redatores, profissionais de marketing e qualquer pessoa que deseje melhorar sua habilidade de comunicação escrita.
+
+Além disso, o projeto de Corretor de Texto oferece uma abordagem flexível e personalizável, permitindo que os usuários ajustem as configurações conforme suas necessidades e preferências. Isso significa que o corretor pode ser adaptado a diferentes estilos de escrita, vocabulários específicos e até mesmo a diferentes idiomas, ampliando ainda mais o seu alcance e utilidade.
+
+Em resumo, o projeto de Corretor de Texto oferece uma solução para melhorar a qualidade da escrita. Com suas funcionalidades avançadas, flexibilidade e recursos de aprendizado, ele pode ser uma ferramenta indispensável para usuários de todas as áreas que desejam aprimorar sua comunicação escrita, garantindo textos mais claros, coerentes e profissionais.
+
 </div>
 
 # Compilação e Execução 🔄
