@@ -12,20 +12,23 @@
 #include <locale>
 #include <codecvt>
 
+#define loopStr(str) for (long unsigned d_inc = 0; d_inc < str.length(); d_inc++)
+#define tolowerStr(str) loopStr(str) str[d_inc] = tolower(str[d_inc])
+
 using namespace std;
 
-struct WordInfo {
+class WordInfo {
+public:
     string palavra;
     int ocorrencias;
-    int posicao;
-    vector<int> posicoes;
-    vector<int> linhas;
+    int palavraIndex;
+    string linha;
+    string posicao;
 
-    WordInfo(const string &p, int o, int pos, int linha, int posicao) : palavra(p), ocorrencias(o), posicao(posicao) {
-        posicoes.push_back(pos);
-        linhas.push_back(linha);
-    }
+    WordInfo(const string &p, int o, int pi, const string &l, const string &pos)
+        : palavra(p), ocorrencias(o), palavraIndex(pi), linha(l), posicao(pos) {}
 };
+
 
 void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, unordered_set<string> &stopwords);
 

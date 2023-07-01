@@ -104,40 +104,73 @@ void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados
 
     if (!outputFile.is_open()) {
         cout << "Erro ao abrir o arquivo output.txt";
+        return;
     }
 
-    /**
-        * 1. Para cada parágrafo, dividir em sentenças - OK
-        * 2. Para cada sentença, dividir em palavras com o id de linha - OK
-        * 3. Para cada palavra, verificar se é stopword - AINDA NAO
-        * 4. Para cada palavra, verificar se é expressão - AINDA NAO
-        * 5. Para cada palavra, verificar se já existe na tabela - AINDA NAO
-        * 6. Se já existe, incrementar o número de ocorrências e adicionar a posição e linha - AINDA NAO
-        * 7. Se não existe, adicionar na tabela com o número de ocorrências 1 e adicionar a posição e linha - AINDA NAO
-        * 8. Imprimir a tabela de palavras da sentença no arquivo - AINDA NAO
-     */
+    ifstream expressoesFile("dataset/expressoes.txt");
 
-    vector<WordInfo> wordTable;
+    if (!expressoesFile.is_open()) {
+        cout << "Erro ao abrir o arquivo expressoes.txt";
+        outputFile.close();
+        return;
+    }
 
-    int palavraIndex = 1;
-    int paragrafoAtual = 0;
+    unordered_map<string, pair<int, int>> expressoesMap; // Mapa para armazenar as expressões e suas ocorrências
 
-    for (auto &p : paragrafosMapeados) {
-        paragrafoAtual++;
+    // Lê as expressões do arquivo expressoes.txt e as armazena no mapa expressoesMap
+    string linhaExpressao;
+    while (getline(expressoesFile, linhaExpressao)) {
+        expressoesMap[linhaExpressao] = make_pair(0, 0); // Inicializa a contagem de ocorrências das expressões
+        // cout << expressoesFile << endl;
+    }
+
+    expressoesFile.close();
+
+    for (int paragrafoAtual = 0; paragrafoAtual < paragrafosMapeados.size(); paragrafoAtual++) {
         int sentencaIndex = 0;
+        int paragrafoLinha = paragrafosMapeados[paragrafoAtual][0][0].first; // Linha do primeiro parágrafo
 
-        for (auto &my_sentense : p) {
-            wordTable.clear();
+        for (auto &my_sentence : paragrafosMapeados[paragrafoAtual]) {
             sentencaIndex++;
-            int position = 0;
+            int sentencaPalavrasComStopwords = 0;
+            int sentencaPalavrasSemStopwords = 0;
 
-            for (auto &palavra : my_sentense) {
+            for (auto &palavra : my_sentence) {
+                sentencaPalavrasComStopwords++;
+                tolowerStr(palavra.second);
+                if (stopwords.find(palavra.second) == stopwords.end()) {
+                    sentencaPalavrasSemStopwords++;
+                }
+            }
+
+            // Atualiza a contagem de sentenças do parágrafo
+            if (sentencaIndex == 1) {
+                paragrafoLinha = my_sentence[0].first; // Atualiza a linha do parágrafo
+            }
+
+            vector<WordInfo> wordTable;
+            int palavraIndex = 1;
+            int position = 0;
+            unordered_map<string, vector<int>> wordPositionMap;
+
+            for (auto &palavra : my_sentence) {
                 position++;
                 if (stopwords.find(palavra.second) == stopwords.end()) {
                     bool palavraExiste = false;
                     size_t tabelaIndex = 0;
+
+                    // Remove o ponto final, se estiver presente no final da palavra
+                    string palavraAtual = palavra.second;
+                    if (!palavraAtual.empty() && palavraAtual.back() == '.') {
+                        palavraAtual.pop_back();
+                    }
+
+                    if (!palavraAtual.empty() && palavraAtual.back() == ',') {
+                        palavraAtual.pop_back();
+                    }
+
                     for (size_t i = 0; i < wordTable.size(); i++) {
-                        if (wordTable[i].palavra == palavra.second) {
+                        if (wordTable[i].palavra == palavraAtual) {
                             palavraExiste = true;
                             tabelaIndex = i;
                             break;
@@ -146,60 +179,95 @@ void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados
 
                     if (palavraExiste) {
                         wordTable[tabelaIndex].ocorrencias++;
-                        // wordTable[tabelaIndex].posicao = position;
-                        // wordTable[tabelaIndex].posicoes.push_back(position);
-                        wordTable[tabelaIndex].linhas.push_back(palavra.first);
+                        if (wordPositionMap.find(palavraAtual) == wordPositionMap.end()) {
+                            wordPositionMap[palavraAtual].push_back(position);
+                        } else {
+                            // Atualizar a lógica de contagem das posições
+                            if (wordPositionMap[palavraAtual].back() != position) {
+                                wordPositionMap[palavraAtual].push_back(position);
+                            }
+                        }
                     } else {
-                        WordInfo novaPalavra(palavra.second, 1, palavraIndex, palavra.first, position);
+                        int linha = palavra.first;
+                        WordInfo novaPalavra(palavraAtual, 1, palavraIndex, std::to_string(linha), "");
+
                         wordTable.push_back(novaPalavra);
+                        wordPositionMap[palavraAtual].push_back(position);
+                        palavraIndex++; // Incrementar apenas quando uma nova palavra é adicionada
                     }
                 }
-                palavraIndex++;
             }
+
+            sort(wordTable.begin(), wordTable.end(), [](const WordInfo &a, const WordInfo &b) {
+                return a.palavra < b.palavra;
+            });
 
             // Imprimir a tabela de palavras da sentença no arquivo
-            outputFile << left << setw(30) << "WORD" << setw(15) << "PARAGRAPH" << setw(15) << "SENTENCE" << setw(15) << "APPEARANCES" << setw(15) << "POSITIONS" << setw(15) << "LINES" << "\n";
-            outputFile << "--------------------------------------------------------------------------------------------------------------------------------------\n";
+            outputFile << left << setw(30) << "WORD" << setw(15) << "PARAGRAPH" << setw(15) << "SENTENCE" << setw(15) << "LINE" << setw(15) << "APPEARANCES" << setw(15) << "POSITIONS" << "\n";
+            outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
 
             for (auto &infoPalavra : wordTable) {
-                std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-                std::wstring texto = converter.from_bytes(infoPalavra.palavra);
+                outputFile << setw(30) << infoPalavra.palavra;
+                outputFile << setw(15) << paragrafoAtual + 1;
+                outputFile << setw(15) << sentencaIndex;
+                outputFile << setw(15) << infoPalavra.linha; // Corrigido para exibir a linha corretamente
+                outputFile << setw(15) << infoPalavra.ocorrencias;
 
-                outputFile
-                    << infoPalavra.palavra << setw(30 - texto.length())
-                    << "" << paragrafoAtual << setw(14) << "" << sentencaIndex
-                    << setw(14) << "" << infoPalavra.ocorrencias << setw(14)
-                    << "" << infoPalavra.posicao << " ";
-
-
-                // acredito que vetor nao tenha sido preenchido
-                // stringstream posicoesStream;
-                // for (int posicao : infoPalavra.posicoes) {
-                //     // outputFile << "teste" << endl;
-                //     // outputFile << 666 << " ";
-                //     outputFile << posicao << " ";
-                // }
-                // string posicoesString = posicoesStream.str();
-
-                stringstream linhasStream;
-                for (size_t i = 0; i < infoPalavra.linhas.size(); i++) {
-                    linhasStream << infoPalavra.linhas[i];
-                    if (i != infoPalavra.linhas.size() - 1) {
-                        linhasStream << ", ";
-                    }
+                // Construir a string das posições separadas por vírgula
+                string posicoesPalavra;
+                for (int posicao : wordPositionMap[infoPalavra.palavra]) {
+                    posicoesPalavra += to_string(posicao) + ",";
                 }
-                string linhasString = linhasStream.str();
 
-                outputFile << setw(15) << "";
-                for (auto &linha : infoPalavra.linhas)
-                    outputFile << linha << " ";
-                outputFile << endl;
+                outputFile << setw(15) << posicoesPalavra << "\n";
             }
 
-            outputFile << "======================================================================================================================================\n\n";
+            outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+            outputFile << "=> Number of words with stop words: " << sentencaPalavrasComStopwords << setw(81) << "=> Number of words without stop words: " << sentencaPalavrasSemStopwords << "\n";
+            outputFile << "=======================================================================================================================================\n\n";
+
+            // Analisar as expressões
+            if (sentencaIndex == paragrafosMapeados[paragrafoAtual].size()) {
+                outputFile << "EXPRESSION" << setw(70) << "" << "LINE" << setw(20) << "" << "APPEARANCES" << "\n";
+                outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+                for (auto &expressao : expressoesMap) {
+                    expressao.second.first = 0; // Redefine a linha da expressão para 0
+                    expressao.second.second = 0; // Redefine as ocorrências da expressão para 0
+
+                    for (auto &sentenca : paragrafosMapeados[paragrafoAtual]) {
+                        string sentencaTexto;
+                        for (auto &palavra : sentenca) {
+                            sentencaTexto += palavra.second + " ";
+                        }
+
+                        size_t posicao = 0;
+                        while ((posicao = sentencaTexto.find(expressao.first, posicao)) != string::npos) {
+                            expressao.second.second++; // Incrementa as ocorrências da expressão
+                            if (expressao.second.first == 0) {
+                                expressao.second.first = sentenca[0].first; // Atualiza a linha da primeira ocorrência da expressão
+                            }
+                            posicao += expressao.first.length();
+                        }
+                    }
+
+                    if (expressao.second.second > 0) {
+                        outputFile << setw(100) << expressao.first;
+                        outputFile << setw(20) << expressao.second.first;
+                        outputFile << setw(20) << expressao.second.second << "\n";
+                    }
+                }
+
+                outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+                outputFile << "=======================================================================================================================================\n";
+                outputFile << "=> Beginning paragraph in line: " << paragrafoLinha << "  Number of sentences: " << sentencaIndex << "\n";
+                outputFile << "=======================================================================================================================================\n\n";
+            }
         }
     }
-    outputFile.close();
 
-    cout << "Análise concluída. Os resultados foram gravados no arquivo output.txt.\n";
+    outputFile.close();
+    cout << "A análise do texto foi concluída. Verifique o arquivo output.txt para ver os resultados." << endl;
 }
+
+
