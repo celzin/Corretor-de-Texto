@@ -20,16 +20,15 @@ Assim, o objetivo deste trabalho é especificar, projetar e implementar um siste
 
 <div align="justify">
 
-A solução proposta é baseada em um programa C++ que tem como objetivo principal analisar umarquivo de texto, considerando vários parâmetros. O arquivo de entrada são arquivos .txt com uma estrutura específica, onde cada sentença termina com um sinal de pontuação e cada parágrafo é separado por pelo menos uma linha em branco.
+A solução proposta é baseada em um programa C++ que tem como objetivo principal analisar um arquivo de texto, considerando vários parâmetros. O arquivo de entrada é um arquivo .txt com uma estrutura específica, onde cada sentença termina com um sinal de pontuação e cada parágrafo é separado por pelo menos uma linha em branco.
 
-O nome do arquivo de entrada é dado pelo usuário. Os arquivos .txt com as expressões e com as stop words são definidas estaticamente no código e assume-se que estarão localizados no diretório raiz no
-mesmo nível do arquivo main.
+O nome do arquivo de entrada é `input.txt`, contendo as expressões e as stop words, que são definidas estaticamente no código. Assume-se que estará localizado em uma pasta `dataset`.
 
-A análise é baseada principalmente em duas estruturas de dados principais: um vetor para armazenar as palavras de parada (stop words) e um mapa não ordenado (unordered_map) para armazenar informações sobre cada palavra no texto, como a frequência de sua ocorrência, linhas em que ocorre e a distância entre suas ocorrências no mesmo parágrafo.
+A análise é baseada principalmente em duas estruturas de dados principais: um vetor para armazenar as palavras de parada (stop words) e um mapa não ordenado (pair) para armazenar informações sobre cada palavra no texto, como a frequência de sua ocorrência, linhas em que ocorre e a distância entre suas ocorrências no mesmo parágrafo.
 
 A escolha dessas estruturas de dados foi baseada em suas propriedades e eficiência. O vetor é uma estrutura de dados linear que permite inserções eficientes no final e acesso direto a qualquer elemento. O mapa não ordenado é uma estrutura de dados de tabela hash, que permite inserções, buscas e remoções eficientes (em média, todas essas operações são O(1)).
 
-O programa começa lendo as stop words de um arquivo específico (stopwords.txt) e armazenando-as no vetor stopWords. Em seguida, lê o arquivo de texto linha por linha usando a função analyzeText(). Se a linha não estiver vazia, ela será adicionada ao parágrafo atual e todas as palavras na linha (exceto stop words) serão adicionadas ao mapa wordInfo com suas informações atualizadas. Quando uma linha em branco é encontrada, isso indica o fim de um parágrafo e a função processParagraph() é chamada para processar o parágrafo atual.
+O programa começa lendo as stop words de um arquivo específico (input.txt), armazenando-as no vetor stopWords. Em seguida, lê o arquivo de texto linha por linha usando a função analyzeText(). Se a linha não estiver vazia, ela será adicionada ao parágrafo atual e todas as palavras na linha (exceto stop words) serão adicionadas ao mapa wordInfo com suas informações atualizadas. Quando uma linha em branco é encontrada, isso indica o fim de um parágrafo e a função processParagraph() é chamada para processar o parágrafo atual.
 
 </div>
 
