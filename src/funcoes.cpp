@@ -270,4 +270,80 @@ void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados
     cout << "A análise do texto foi concluída. Verifique o arquivo output.txt para ver os resultados." << endl;
 }
 
+void analisarExpressoesTexto(const vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, const unordered_set<string> &stopwords) {
+    ofstream outputFile("dataset/output.txt", ios::app);
+
+    if (!outputFile.is_open()) {
+        cout << "Erro ao abrir o arquivo output.txt";
+        return;
+    }
+
+    ifstream expressoesFile("dataset/expressoes.txt");
+
+    if (!expressoesFile.is_open()) {
+        cout << "Erro ao abrir o arquivo expressoes.txt";
+        outputFile.close();
+        return;
+    }
+
+    unordered_map<string, pair<int, int>> expressoesMap;
+
+    // Lê as expressões do arquivo expressoes.txt e as armazena no mapa expressoesMap
+    string linhaExpressao;
+    while (getline(expressoesFile, linhaExpressao)) {
+        expressoesMap[linhaExpressao] = make_pair(0, 0); // Inicializa a contagem de ocorrências das expressões
+    }
+
+    expressoesFile.close();
+
+    for (const auto &paragrafo : paragrafosMapeados) {
+        for (const auto &sentenca : paragrafo) {
+            string sentencaTexto;
+            for (const auto &palavra : sentenca) {
+                sentencaTexto += palavra.second + " ";
+            }
+
+            for (const auto &expressao : expressoesMap) {
+                size_t posicao = 0;
+                while ((posicao = sentencaTexto.find(expressao.first, posicao)) != string::npos) {
+                    expressoesMap[expressao.first].second++; // Incrementa as ocorrências da expressão
+                    if (expressoesMap[expressao.first].first == 0) {
+                        expressoesMap[expressao.first].first = sentenca[0].first; // Atualiza a linha da primeira ocorrência da expressão
+                    }
+                    posicao += expressao.first.length();
+                }
+            }
+        }
+    }
+
+    // Ordenar as expressões em ordem alfabética
+    vector<string> expressoesOrdenadas;
+    for (const auto &expressao : expressoesMap) {
+        expressoesOrdenadas.push_back(expressao.first);
+    }
+    sort(expressoesOrdenadas.begin(), expressoesOrdenadas.end());
+
+    // Imprime as expressões encontradas no arquivo de saída
+    outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+    outputFile << "EXPRESSION" << setw(70) << "" << "LINE" << setw(20) << "" << "APPEARANCES" << "\n";
+    outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+    for (const auto &expressao : expressoesOrdenadas) {
+        const auto &expressaoInfo = expressoesMap[expressao];
+        if (expressaoInfo.second > 0) {
+            outputFile << setw(0) << expressao;
+            outputFile << setw(70) << expressaoInfo.first;
+            outputFile << setw(20) << expressaoInfo.second << "\n";
+        }
+    }
+
+    outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+    outputFile << "======================================================================================================================================\n";
+    outputFile << "=>                                                    ### END PROCESS ###                                                           <=\n";
+    outputFile << "======================================================================================================================================\n";
+
+    outputFile.close();
+
+    cout << "A análise das expressões do texto foi concluída. Verifique o arquivo output.txt para ver os resultados." << endl;
+}
 

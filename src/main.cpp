@@ -16,7 +16,9 @@ int main() {
 
     analisarTexto(paragrafos, stopwords);
 
+    //analisarTextoCompleto(paragrafos, stopwords);
 
+    analisarExpressoesTexto(paragrafos, stopwords);
 
     return 0;
 }

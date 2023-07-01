@@ -32,6 +32,10 @@ public:
 
 void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, unordered_set<string> &stopwords);
 
+void analisarExpressoesTexto(const vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, const unordered_set<string> &stopwords);
+
+//void analisarTextoCompleto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, unordered_set<string> &stopwords);
+
 vector<pair<int, string>> lerArquivo(const string &nomeArquivo); // recebe o nome do arquivo como parâmetro e retorna uma string com o conteúdo lido.
 // Ela percorre o arquivo linha por linha, adicionando cada linha à string conteudo.
 
