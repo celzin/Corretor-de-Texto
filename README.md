@@ -84,63 +84,63 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
   </tr>
   <tr>
     <td align="center">1</td>
-    <td align="center">0.002492</td>
-    <td align="center">0.001284</td>
-    <td align="center">2.6e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td align="center">0.003912</td>
-    <td align="center">0.001199</td>
-    <td align="center">1.1e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">3</td>
-    <td align="center">0.003998</td>
-    <td align="center">0.001201</td>
-    <td align="center">1.1e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">4</td>
-    <td align="center">0.002420</td>
-    <td align="center">0.001316</td>
-    <td align="center">1.3e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">00.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">5</td>
-    <td align="center">0.002625</td>
-    <td align="center">0.001034</td>
-    <td align="center">1.2e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">6</td>
-    <td align="center">0.002595</td>
-    <td align="center">0.001470</td>
-    <td align="center">1.5e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">7</td>
-    <td align="center">0.003787</td>
-    <td align="center">0.001248</td>
-    <td align="center">1.7e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">8</td>
-    <td align="center">0.004253</td>
-    <td align="center">0.001274</td>
-    <td align="center">1.3e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">9</td>
-    <td align="center">0.002500</td>
-    <td align="center">0.001265</td>
-    <td align="center">1.3e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">10</td>
-    <td align="center">0.003926</td>
-    <td align="center">0.001254</td>
-    <td align="center">1.2e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">Média</td>
@@ -172,63 +172,63 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
   </tr>
   <tr>
     <td align="center">1</td>
-    <td align="center">0.002383</td>
-    <td align="center">0.000965</td>
-    <td align="center">6.0<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td align="center">0.003356</td>
-    <td align="center">0.001253</td>
-    <td align="center">7.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">3</td>
-    <td align="center">0.004961</td>
-    <td align="center">0.001312</td>
-    <td align="center">7.0<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">4</td>
-    <td align="center">0.03833</td>
-    <td align="center">0.001219</td>
-    <td align="center">8.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">5</td>
-    <td align="center">0.003547</td>
-    <td align="center">0.001221</td>
-    <td align="center">7.0e<sup>-05</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00></td>
   </tr>
   <tr>
     <td align="center">6</td>
-    <td align="center">0.004578</td>
-    <td align="center">0.001316</td>
-    <td align="center">8.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">7</td>
-    <td align="center">0.004837</td>
-    <td align="center">0.001253</td>
-    <td align="center">6.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">8</td>
-    <td align="center">0.003222</td>
-    <td align="center">0.001320</td>
-    <td align="center">9.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">9</td>
-    <td align="center">0.003085</td>
-    <td align="center">0.001251</td>
-    <td align="center">8.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00></td>
   </tr>
   <tr>
     <td align="center">10</td>
-    <td align="center">0.004562</td>
-    <td align="center">0.001286</td>
-    <td align="center">7.0e<sup>-06</sup></td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">Média</td>
@@ -254,84 +254,174 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (ms)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (ms)</th>
-    <th align="center">Análise das Ocorrências de Expressões (ms)</th>
+    <th align="center">Análise dos Parágrafos do Texto (s)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
+    <th align="center">Análise das Ocorrências de Expressões (s)</th>
   </tr>
   <tr>
     <td align="center">1</td>
-    <td align="center">336.649</td>
-    <td align="center">114.931</td>
-    <td align="center">0.024</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td align="center">340.445</td>
-    <td align="center">88.252</td>
-    <td align="center">0.017</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">3</td>
-    <td align="center">350.193</td>
-    <td align="center">104.29</td>
-    <td align="center">0.021</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">4</td>
-    <td align="center">332.436</td>
-    <td align="center">95.687</td>
-    <td align="center">0.016</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">5</td>
-    <td align="center">354.738</td>
-    <td align="center">106.540</td>
-    <td align="center">0.019</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00></td>
   </tr>
   <tr>
     <td align="center">6</td>
-    <td align="center">343.466</td>
-    <td align="center">107.924</td>
-    <td align="center">0.016</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">7</td>
-    <td align="center">340.969</td>
-    <td align="center">104.928</td>
-    <td align="center">0.019</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">8</td>
-    <td align="center">355.495</td>
-    <td align="center">111.073</td>
-    <td align="center">0.021</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">9</td>
-    <td align="center">320.295</td>
-    <td align="center">92.582</td>
-    <td align="center">0.019</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00></td>
   </tr>
   <tr>
     <td align="center">10</td>
-    <td align="center">319.853</td>
-    <td align="center">90.901</td>
-    <td align="center">0.016</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">Média</td>
-    <td align="center">339.148</td>
-    <td align="center">101.781</td>
-    <td align="center">0.018</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
   <tr>
     <td align="center">Desvio Padrão</td>
-    <td align="center">10.262</td>
-    <td align="center">8.528</td>
-    <td align="center">0.002</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
   </tr>
 </tbody>
 </table>
+
+<table align="center">
+<thead>
+  <tr>
+    <th class="tg-0lax" colspan="4">Entrada 4 ( <a href="https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada4.txt">entrada4.txt</a> ) </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th align="center">Medições</th>
+    <th align="center">Análise dos Parágrafos do Texto (s)</th>
+    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
+    <th align="center">Análise das Ocorrências de Expressões (s)</th>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00></td>
+  </tr>
+  <tr>
+    <td align="center">6</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">7</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">8</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">9</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00></td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">Média</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+  <tr>
+    <td align="center">Desvio Padrão</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+    <td align="center">0.00</td>
+  </tr>
+</tbody>
+</table>
+
+
 
 <table align="center">
 <thead>
