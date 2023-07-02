@@ -46,9 +46,11 @@ O programa começa lendo as stop words de um arquivo específico (input.txt), ar
 
 <div align="justify">
   
-O principal algoritmo utilizado neste programa é o algoritmo de análise de texto. Este algoritmo tem uma complexidade de tempo O(n*m), onde n é o número de linhas no arquivo de texto e m é o número médio de palavras por linha. Isso se deve ao fato de que o algoritmo precisa percorrer todas as palavras em todas as linhas do texto. No entanto, a complexidade de tempo real pode ser menor devido ao fato de que muitas operações são realizadas em tempo constante devido ao uso do mapa não ordenado. 
+O algoritmo de análise de texto utilizado tem uma complexidade de tempo O(n*m), onde n é o número de linhas no arquivo de texto e m é o número médio de palavras por linha. Isso ocorre porque o algoritmo precisa percorrer todas as palavras em todas as linhas do texto para realizar a análise. Ou seja, a quantidade de operações que o algoritmo precisa executar aumenta proporcionalmente ao número de linhas e palavras no texto. Essa é uma complexidade linear, pois a medida que o tamanho do texto aumenta, o tempo de execução do algoritmo também aumenta linearmente.
 
-O programa também usa o algoritmo de ordenação da biblioteca padrão C++ (std::sort) para ordenar as palavras em ordem alfabética no final da análise. A complexidade deste algoritmo é O(n log n), onde n é o número de palavras distintas no texto.
+No entanto, é importante notar que a complexidade de tempo real pode ser menor do que O(n*m) devido ao uso de estruturas de dados eficientes. Muitas operações são realizadas em tempo constante graças ao uso de um mapa não ordenado, que permite acesso rápido às palavras durante a análise. O mapa não ordenado (por exemplo, um hash table) é utilizado para armazenar as palavras encontradas no texto e seu respectivo número de ocorrências. Isso reduz o tempo necessário para buscar palavras específicas e atualizar a contagem, resultando em uma complexidade efetiva menor durante a execução do algoritmo.
+
+Além disso, o programa utiliza o algoritmo de ordenação std::sort da biblioteca padrão C++ para ordenar as palavras em ordem alfabética no final da análise. A complexidade deste algoritmo é O(n log n), onde n é o número de palavras distintas no texto. Esse é um algoritmo de ordenação eficiente e rápido, especialmente em comparação com algoritmos de ordenação com complexidade quadrática, como o bubble sort ou o insertion sort. Portanto, a complexidade de tempo para a etapa de ordenação é mais eficiente em relação ao número de palavras distintas do texto.
 
 </div>
 
