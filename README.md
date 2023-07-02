@@ -44,6 +44,12 @@ No geral, a implementação desse código demonstra o uso de estruturas de dados
 
 </div>
 
+# Representação gráfica :camera:
+
+<div align="justify">
+
+</div>
+
 # Análise de Complexidade 🔎
 
 <div align="justify">
