@@ -495,17 +495,18 @@ Em resumo, as medições mostraram que o tempo de processamento varia de acordo 
 
 <div align="justify">
 
-Em resumo, nota-se o programa é dividido em três partes principais: análise do texto, geração de relatório e contagem de expressões. Cada parte é medida em termos de tempo de execução, usando a biblioteca time.h para calcular o tempo decorrido em milissegundos.
+Em resumo, nota-se o programa é dividido em quatro partes principais: análise parcial do texto, analisa total do texto, geração de relatório e contagem total de expressões. Cada parte é medida em termos de tempo de execução, usando a biblioteca time.h para calcular o tempo decorrido em milissegundos.
 
-Analisando as tabelas, em específico a maior entrada testada [(entrada4.txt)](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada4.txt), podemos observar que a análise do texto (Análise 1) é a que possui um tempo médio dentre as demais, levando em média 561.540 milissegundos para ser concluída. Isso indica que o processamento dos parágrafos e a remoção das stopwords estão sendo realizados de forma eficiente.
+Analisando as tabelas, em específico a maior entrada testada [(entrada4.txt)](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada4.txt), podemos observar que a análise parcial do texto (Análise 1) é a que possui um tempo médio dentre as demais, levando em média 561.540 milissegundos para ser concluída. Isso indica que o processamento dos parágrafos e a remoção das stopwords estão sendo realizados de maneira razoável devido a complexidade da entrada analisada.
 
-A geração de relatório e a contagem de palavras (Análise 2) é a parte que consome mais tempo em comparação com as outras etapas, levando em média 14884.46 milissegundos para ser concluída. Isso sugere que a geração do relatório e a contagem de palavras podem ser otimizadas para melhorar o desempenho geral do programa.
+A geração de relatório e a análise total de contagem de palavras (Análise 2) é a parte que consome mais tempo em comparação com as outras etapas, levando em média 14884.46 milissegundos para ser concluída. Isso sugere que a geração do relatório e a contagem de palavras podem ser otimizadas para melhorar o desempenho geral do programa.
 
-A contagem de expressões (Análise 3) é a etapa mais rápida, levando em média 25.859 milissegundos para ser concluída. Isso indica que a busca e contagem das expressões no texto estão sendo executadas de forma eficiente.
+A análise total de expressões (Análise 3) é a etapa mais rápida, levando em média 25.859 milissegundos para ser concluída. Isso indica que a busca e contagem das expressões no texto estão sendo executadas de forma eficiente.
 
 No geral, o tempo total de execução do programa pode variar dependendo do tamanho do arquivo de entrada e da quantidade de dados a serem processados. É importante notar que o desempenho do programa pode ser influenciado por fatores como a complexidade dos algoritmos utilizados e a eficiência das estruturas de dados empregadas.
 
-Com base nessas informações, podemos concluir que o programa tem um desempenho aceitável para a análise de texto e contagem de expressões. No entanto, a geração de relatório e a contagem de palavras podem ser áreas de melhoria para otimizar o tempo de execução e a eficiência do programa. Seria interessante investigar se há oportunidades de otimização nessas etapas, como a utilização de algoritmos mais eficientes ou a implementação de estruturas de dados mais adequadas.
+Com base nessas informações, podemos concluir que o programa tem um desempenho aceitável para a análise parcial de texto e análise total de expressões. No entanto, a geração de relatório e análise total de palavras no texto podem ser áreas de melhoria para otimizar o tempo de execução e a eficiência do programa. Seria interessante investigar se há oportunidades de otimização nessas etapas, como a utilização de algoritmos mais eficientes ou a implementação de estruturas de dados mais adequadas.
+
 </div>
 
 # Compilação e Execução 🔄
