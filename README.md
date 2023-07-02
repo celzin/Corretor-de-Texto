@@ -32,7 +32,7 @@ Assim, o objetivo deste trabalho é especificar, projetar e implementar um siste
 
 A solução proposta é baseada em um programa C++ que tem como objetivo principal analisar um arquivo de texto, considerando vários parâmetros. O arquivo de entrada é um arquivo .txt com uma estrutura específica, onde cada sentença termina com um sinal de pontuação e cada parágrafo é separado por pelo menos uma linha em branco.
 
-O nome do arquivo de entrada é `input.txt`, contendo as expressões e as stop words, que são definidas estaticamente no código. Assume-se que estará localizado em uma pasta `dataset`.
+O nome do arquivo de entrada é `input.txt` contendo o texto a ser analisado. O arquivo `expressoes.txt` contém as expressões, e o arquivo `stopwords.txt` contém as stop words, que são definidas estaticamente no código. Assume-se que estará localizado em uma pasta `dataset`.
 
 A análise é baseada principalmente em duas estruturas de dados principais: um vetor para armazenar as palavras de parada (stop words) e um mapa não ordenado (pair) para armazenar informações sobre cada palavra no texto, como a frequência de sua ocorrência, linhas em que ocorre e a distância entre suas ocorrências no mesmo parágrafo.
 
