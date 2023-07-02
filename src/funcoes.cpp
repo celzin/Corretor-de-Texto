@@ -1,5 +1,17 @@
 #include "funcoes.hpp"
 
+template <typename T>
+string concatenateElements(const vector<T> &elements, const string &delimiter = " ") {
+    stringstream ss;
+    for (size_t i = 0; i < elements.size(); i++) {
+        ss << elements[i];
+        if (i != elements.size() - 1) {
+            ss << delimiter;
+        }
+    }
+    return ss.str();
+}
+
 vector<pair<int, string>> lerArquivo(const string &nomeArquivo) {
     vector<pair<int, string>> linhas;
     ifstream arquivo(nomeArquivo);
@@ -270,5 +282,298 @@ void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados
     cout << "A análise do texto foi concluída. Verifique o arquivo output.txt para ver os resultados." << endl;
 }
 
+void gerarRelatorio(const vector<vector<vector<pair<int, string>>>> &paragrafos,
+    const unordered_set<string> &stopwords,
+    const unordered_set<string> &expressoes) {
+    ofstream arquivo("dataset/output.txt", ios::app);
+    if (!arquivo) {
+        cout << "Erro ao abrir o arquivo." << endl;
+        return;
+    }
+
+    arquivo << "======================================================================================================================================\n";
+    arquivo << "=>                                                    ### FULL RESULT ###                                                               \n";
+    arquivo << "======================================================================================================================================\n";
+    arquivo << "\n";
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+    arquivo << "WORD\t\t\tPARAGRAPH\t\tSENTENCE\t\tLINE\t\tAPPEARANCES\t\tPOSITIONS\n";
+    arquivo << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+    vector<WordInfo2> palavras;
+
+    for (int i = 0; i < paragrafos.size(); i++) {
+        for (int j = 0; j < paragrafos[i].size(); j++) {
+            for (int k = 0; k < paragrafos[i][j].size(); k++) {
+                string palavra = paragrafos[i][j][k].second;
+
+                if (stopwords.count(palavra) || expressoes.count(palavra)) {
+                    continue;
+                }
+
+                bool palavraExistente = false;
+                for (int index = 0; index < palavras.size(); index++) {
+                    if (palavras[index].palavra == palavra) {
+                        palavras[index].ocorrencias++;
+                        palavras[index].posicoes.push_back(k + 1);
+
+                        if (find(palavras[index].linhas.begin(), palavras[index].linhas.end(), paragrafos[i][j][k].first) == palavras[index].linhas.end()) {
+                            palavras[index].linhas.push_back(paragrafos[i][j][k].first);
+                        }
+                        if (find(palavras[index].paragrafos.begin(), palavras[index].paragrafos.end(), i + 1) == palavras[index].paragrafos.end()) {
+                            palavras[index].paragrafos.push_back(i + 1);
+                        }
+                        if (find(palavras[index].sentencas.begin(), palavras[index].sentencas.end(), j + 1) == palavras[index].sentencas.end()) {
+                            palavras[index].sentencas.push_back(j + 1);
+                        }
+
+                        palavraExistente = true;
+                        break;
+                    }
+                }
+
+                if (!palavraExistente) {
+                    palavras.push_back(WordInfo2(palavra, i + 1, j + 1, paragrafos[i][j][k].first, 1, k + 1));
+                }
+            }
+        }
+    }
+
+    sort(palavras.begin(), palavras.end(), [](const WordInfo2 &a, const WordInfo2 &b) {
+        return a.palavra < b.palavra;
+    });
+
+    for (const WordInfo2 &word : palavras) {
+        arquivo << word.palavra << "\t\t\t";
+        arquivo << concatenateElements(word.paragrafos) << "\t\t\t";
+        arquivo << concatenateElements(word.sentencas) << "\t\t\t";
+        arquivo << concatenateElements(word.linhas) << "\t\t\t";
+        arquivo << word.ocorrencias << "\t\t\t";
+        arquivo << concatenateElements(word.posicoes) << "\n";
+    }
+
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+
+    arquivo.close();
+}
+
+void contarPalavras(const vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, const unordered_set<string> &stopwords) {
+    ofstream arquivo("dataset/output.txt", ios::app);
+    if (!arquivo) {
+        cout << "Erro ao abrir o arquivo." << endl;
+        return;
+    }
+
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+    arquivo << "                                       NUMBER OF WORDS IN EACH SENTENCE WITH AND WITHOUT STOP WORDS                                     \n";
+    arquivo << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+    for (int i = 0; i < paragrafosMapeados.size(); i++) {
+        int linhaInicioParagrafo = paragrafosMapeados[i][0][0].first;
+        int numSentencas = paragrafosMapeados[i].size();
+
+        for (int j = 0; j < paragrafosMapeados[i].size(); j++) {
+            int numPalavrasComStopwords = 0;
+            int numPalavrasSemStopwords = 0;
+
+            for (int k = 0; k < paragrafosMapeados[i][j].size(); k++) {
+                string palavra = paragrafosMapeados[i][j][k].second;
+
+                if (stopwords.count(palavra) == 0) {
+                    numPalavrasSemStopwords++;
+                }
+
+                numPalavrasComStopwords++;
+            }
+
+            arquivo << "Paragraph: " << i + 1 << "\t Sentence: " << j + 1 << "\t Number of words with stop words: " << numPalavrasComStopwords << "\t Number of words without stop words: " << numPalavrasSemStopwords << "\n";
+        }
+
+        arquivo << "_______________________________________________________________________________________________________________________________________\n";
+    }
+
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+    arquivo << "                                                   LINE NUMBER THAT START EACH PARAGRAPH                                                \n";
+    arquivo << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+    for (int i = 0; i < paragrafosMapeados.size(); i++) {
+        int linhaInicioParagrafo = paragrafosMapeados[i][0][0].first;
+        int numSentencas = paragrafosMapeados[i].size();
+
+        arquivo << "Paragraph: " << i + 1 << "\t Beginning in line: " << linhaInicioParagrafo << "\t Number of sentences: " << numSentencas << "\n";
+    }
+
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+
+    arquivo.close();
+
+    cout << "A análise 2 concluída." << endl;
+
+}
+
+void contarExpressoes(const std::vector<std::vector<std::vector<std::pair<int, std::string>>>> &paragrafosMapeados, const std::unordered_set<std::string> &expressions) {
+    std::unordered_map<std::string, std::vector<int>> expressoesMap;
+    std::unordered_map<std::string, int> contagemExpressoes;
+
+    for (const auto &expression : expressions) {
+        expressoesMap[expression] = std::vector<int>();
+        contagemExpressoes[expression] = 0;
+    }
+
+    for (int i = 0; i < paragrafosMapeados.size(); i++) {
+        for (int j = 0; j < paragrafosMapeados[i].size(); j++) {
+            int linha = paragrafosMapeados[i][j][0].first;
+            std::string texto;
+
+            for (int k = 0; k < paragrafosMapeados[i][j].size(); k++) {
+                texto += paragrafosMapeados[i][j][k].second + " ";
+            }
+
+            for (const auto &expression : expressions) {
+                size_t pos = texto.find(expression);
+                while (pos != std::string::npos) {
+                    expressoesMap[expression].push_back(linha);
+                    contagemExpressoes[expression]++;
+                    pos = texto.find(expression, pos + 1);
+                }
+            }
+        }
+    }
+
+    std::ofstream arquivo("dataset/output.txt", ios::app);
+    if (!arquivo) {
+        std::cout << "Erro ao abrir o arquivo." << std::endl;
+        return;
+    }
+
+    arquivo << "_______________________________________________________________________________________________________________________________________\n";
+    arquivo << "EXPRESSION \t\t\t\t\t  LINE \t\t   APPEARANCES \n";
+    arquivo << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+    for (const auto &expression : expressions) {
+        const auto &linhas = expressoesMap[expression];
+        if (!linhas.empty()) {
+            arquivo << expression << "\t\t\t\t\t";
+            for (int i = 0; i < linhas.size(); i++) {
+                arquivo << linhas[i];
+                if (i < linhas.size() - 1)
+                    arquivo << " ";
+            }
+            arquivo << "\t\t       " << contagemExpressoes[expression] << "\n";
+        }
+    }
+
+    arquivo << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+    arquivo << "======================================================================================================================================\n";
+    arquivo << "=>                                                    ### END PROCESS ###                                                              \n";
+    arquivo << "======================================================================================================================================\n";
+
+    arquivo.close();
+
+    cout << "A análise das expressões do texto foi concluída. Verifique o arquivo output.txt para ver os resultados." << endl;
+}
+
+// void analisarExpressoesTexto(const vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, const unordered_set<string> &stopwords) {
+//     ofstream outputFile("dataset/output.txt", ios::app);
+
+//     if (!outputFile.is_open()) {
+//         cout << "Erro ao abrir o arquivo output.txt";
+//         return;
+//     }
+
+//     ifstream expressoesFile("dataset/expressoes.txt");
+
+//     if (!expressoesFile.is_open()) {
+//         cout << "Erro ao abrir o arquivo expressoes.txt";
+//         outputFile.close();
+//         return;
+//     }
+
+//     unordered_map<string, pair<int, int>> expressoesMap;
+
+//     // Lê as expressões do arquivo expressoes.txt e as armazena no mapa expressoesMap
+//     string linhaExpressao;
+//     while (getline(expressoesFile, linhaExpressao)) {
+//         expressoesMap[linhaExpressao] = make_pair(0, 0); // Inicializa a contagem de ocorrências das expressões
+//     }
+
+//     expressoesFile.close();
+
+//     for (const auto &paragrafo : paragrafosMapeados) {
+//         for (const auto &sentenca : paragrafo) {
+//             string sentencaTexto;
+//             for (const auto &palavra : sentenca) {
+//                 sentencaTexto += palavra.second + " ";
+//             }
+
+//             for (const auto &expressao : expressoesMap) {
+//                 size_t posicao = 0;
+//                 while ((posicao = sentencaTexto.find(expressao.first, posicao)) != string::npos) {
+//                     expressoesMap[expressao.first].second++; // Incrementa as ocorrências da expressão
+//                     if (expressoesMap[expressao.first].first == 0) {
+//                         expressoesMap[expressao.first].first = sentenca[0].first; // Atualiza a linha da primeira ocorrência da expressão
+//                     }
+//                     posicao += expressao.first.length();
+//                 }
+//             }
+//         }
+//     }
+
+//     // Ordenar as expressões em ordem alfabética
+//     vector<string> expressoesOrdenadas;
+//     for (const auto &expressao : expressoesMap) {
+//         expressoesOrdenadas.push_back(expressao.first);
+//     }
+//     sort(expressoesOrdenadas.begin(), expressoesOrdenadas.end());
+
+//     // Imprime as expressões encontradas no arquivo de saída
+//     outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+//     outputFile << "EXPRESSION" << setw(70) << "" << "LINE" << setw(20) << "" << "APPEARANCES" << "\n";
+//     outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+
+//     for (const auto &expressao : expressoesOrdenadas) {
+//         const auto &expressaoInfo = expressoesMap[expressao];
+//         if (expressaoInfo.second > 0) {
+//             outputFile << setw(0) << expressao;
+//             //outputFile << setw(70) << expressaoInfo.first;
+//             //outputFile << setw(20) << expressaoInfo.second << "\n";
+
+//             // Construir a string das linhas separadas por vírgula
+//             string linhasExpressao;
+//             bool firstLine = true;
+//             for (const auto &paragrafo : paragrafosMapeados) {
+//                 for (const auto &sentenca : paragrafo) {
+//                     string sentencaTexto;
+//                     for (const auto &palavra : sentenca) {
+//                         sentencaTexto += palavra.second + " ";
+//                     }
+
+//                     size_t posicao = 0;
+//                     while ((posicao = sentencaTexto.find(expressao, posicao)) != string::npos) {
+//                         int linha = sentenca[0].first;
+//                         if (!firstLine) {
+//                             linhasExpressao += ", ";
+//                         }
+//                         linhasExpressao += to_string(linha);
+//                         posicao += expressao.length();
+//                         firstLine = false;
+//                     }
+//                 }
+//             }
+
+//             outputFile << setw(70) << linhasExpressao;
+//             outputFile << setw(20) << expressaoInfo.second << "\n";
+//         }
+//     }
+
+//     outputFile << "---------------------------------------------------------------------------------------------------------------------------------------\n";
+//     outputFile << "======================================================================================================================================\n";
+//     outputFile << "=>                                                    ### END PROCESS ###                                                           <=\n";
+//     outputFile << "======================================================================================================================================\n";
+
+//     outputFile.close();
+
+//     cout << "A análise das expressões do texto foi concluída. Verifique o arquivo output.txt para ver os resultados." << endl;
+// }
 
 

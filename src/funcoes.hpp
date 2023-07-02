@@ -29,12 +29,36 @@ public:
         : palavra(p), ocorrencias(o), palavraIndex(pi), linha(l), posicao(pos) {}
 };
 
+struct WordInfo2 {
+    std::string palavra;
+    std::vector<int> paragrafos;
+    std::vector<int> sentencas;
+    std::vector<int> linhas;
+    int ocorrencias;
+    std::vector<int> posicoes;
+
+    WordInfo2(const std::string &p, int pg, int st, int ln, int oc, int ps)
+        : palavra(p), ocorrencias(oc) {
+        paragrafos.push_back(pg);
+        sentencas.push_back(st);
+        linhas.push_back(ln);
+        posicoes.push_back(ps);
+    }
+};
 
 void analisarTexto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, unordered_set<string> &stopwords);
 
-void analisarExpressoesTexto(const vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, const unordered_set<string> &stopwords);
+bool compararPalavras(const std::pair<std::string, std::pair<int, std::string>> &palavra1, const std::pair<std::string, std::pair<int, std::string>> &palavra2);
 
-//void analisarTextoCompleto(vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, unordered_set<string> &stopwords);
+void gerarRelatorio(const std::vector<std::vector<std::vector<std::pair<int, std::string>>>> &paragrafosMapeados,
+    const std::unordered_set<std::string> &stopwords,
+    const std::unordered_set<std::string> &expressoes);
+
+void contarPalavras(const std::vector<std::vector<std::vector<std::pair<int, std::string>>>> &paragrafosMapeados, const std::unordered_set<std::string> &stopwords);
+
+void contarExpressoes(const std::vector<std::vector<std::vector<std::pair<int, std::string>>>> &paragrafosMapeados, const std::unordered_set<std::string> &expressions);
+
+//void analisarExpressoesTexto(const vector<vector<vector<pair<int, string>>>> &paragrafosMapeados, const unordered_set<string> &stopwords);
 
 vector<pair<int, string>> lerArquivo(const string &nomeArquivo); // recebe o nome do arquivo como parâmetro e retorna uma string com o conteúdo lido.
 // Ela percorre o arquivo linha por linha, adicionando cada linha à string conteudo.
@@ -50,6 +74,4 @@ unordered_set<string> leExpressoes(const string &nomeArquivo);
 vector<pair<string, int>> dividirSentencas(const string &paragrafo);
 
 void analisarTexto(vector<vector<pair<string, int>>> &sentencasPorParagrafo, unordered_set<string> &stopwords);
-
-// pair<int, int> contaPalavras(const vector<vector<string>>& sentencasPorParagrafo, const unordered_set<string>& stopwords);
 
