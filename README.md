@@ -58,7 +58,7 @@ Além disso, o programa utiliza o algoritmo de ordenação std::sort da bibliote
 
 <div align="justify">
 	
-Nesta seção, apresentamos os resultados de experimentos envolvendo três tipos de entradas diferentes: [<code>entrada.txt</code>](), [<code>entrada2.txt</code>](), [<code>entrada3.txt</code>](). O objetivo dos experimentos é comparar o desempenho e a eficácia desse algoritmo em diferentes tipos de entrada e diversos cenários, utilizando uma máquina com especificações definidas.
+Nesta seção, apresentamos os resultados de experimentos envolvendo quatro tipos de entradas diferentes: [entrada.txt](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada.txt), [entrada2.txt](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada2.txt), [entrada3.txt](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada3.txt) e [entrada4.txt](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada4.txt). O objetivo dos experimentos é comparar o desempenho e a eficácia desse algoritmo em diferentes tipos de entrada e diversos cenários, utilizando uma máquina com especificações definidas.
 
 Os experimentos foram conduzidos em uma máquina com as seguintes especificações:
 
@@ -67,7 +67,7 @@ Os experimentos foram conduzidos em uma máquina com as seguintes especificaçõ
 - Sistema Operacional: Ubuntu Linux;
 - Linguagem de Programação: C++.
 
-Para cada entrada, foram executadas 10 iterações utilizando com cada uma das entradas apresentadas. A entrada consiste em (...). Essa entrada foi mantida constante durante as iterações propostas para garantir a comparabilidade dos resultados. Durante cada iteração, o tempo de execução do algoritmo, a solução encontrada foi registrada em um arquivo <code>output.data</code>. Os resultados obtidos nos experimentos foram analisados com auxílio da tabela abaixo.
+Para cada entrada, foram executadas 10 iterações utilizando com cada uma das entradas apresentadas. A entrada consiste em um arquivo de texto sem formatação e escrito no padrão ASCII. Em cada análise a entrada foi mantida constante durante as iterações propostas para garantir a comparabilidade dos resultados. Durante cada iteração, o tempo de execução do algoritmo, a solução encontrada foi registrada em um arquivo [output.txt](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/output.txt). Os resultados obtidos nos experimentos foram analisados com auxílio da tabela abaixo.
 
 </div>
 
@@ -417,8 +417,6 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 </tbody>
 </table>
 
-
-
 <table align="center">
 <thead>
   <tr>
@@ -462,11 +460,19 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
     <td align="center"><b>15571.869</b></td>
   </tr>
 </tbody>
-</table>
+</table><br>
 
 <div align="justify">
 	
-Em resumo, os resultados dos experimentos mostram que o Corretor de Texto proposto é eficaz na detecção de erros ortográficos e gramaticais, bem como na identificação de palavras de parada. No entanto, é importante levar em consideração que os resultados podem variar dependendo do tipo de texto e das características específicas do problema.
+Os resultados das medições revelaram informações sobre o desempenho e tempo de processamento do sistema de análise de texto. As análises parcial dos parágrafos, total dos termos e total das ocorrências de expressões foram avaliadas em diferentes entradas.
+
+Para a primeira entrada, a análise parcial dos parágrafos teve média de tempo de processamento de 1.401 ms, enquanto a análise total dos termos teve média de 1.690 ms. A análise total das ocorrências de expressões foi a mais rápida, com média de 0.083 ms.
+
+Na segunda entrada, a análise parcial dos parágrafos teve média de 1.202 ms, a análise total dos termos teve média de 1.422 ms e a análise total das ocorrências de expressões manteve-se rápida, com média de 0.078 ms.
+
+Já na terceira e quarta entradas, os tempos de processamento aumentaram significativamente. A terceira entrada teve média de 142.838 ms para a análise parcial dos parágrafos, 1547.454 ms para a análise total dos termos e 6.020 ms para a análise total das ocorrências de expressões. Na quarta entrada, os tempos aumentaram ainda mais, com média de 560.763 ms para a análise parcial dos parágrafos, 6097.454 ms para a análise total dos termos e 9.020 ms para a análise total das ocorrências de expressões.
+
+Em resumo, as medições mostraram que o tempo de processamento varia de acordo com a entrada e o tipo de análise realizada. As análises parcial dos parágrafos e total dos termos geralmente exigem mais tempo, enquanto a análise total das ocorrências de expressões é mais rápida em todas as entradas. Esses resultados são importantes para otimizar futuras análises de texto.
 
 </div>
 
