@@ -49,21 +49,21 @@ No geral, a implementação desse código demonstra o uso de estruturas de dados
 <div align="justify">
 Foram feitos dois gifs de  representações gráficas onde foi possível representar ideias do código final, a primeira representação abaixo demonstra o funcionamento passo a passo de como é feito o tratamento da e remoção das `stopWords`.
 
+<br><br>
+
 <p align="center">
-<img src="https://github.com/celzin/Corretor-de-Texto/assets/50600414/1412e12d-359b-47af-a74b-d46a08fdc58f" width="500"/> 
+<img src="https://github.com/celzin/Corretor-de-Texto/assets/50600414/1412e12d-359b-47af-a74b-d46a08fdc58f" width="700"/> 
 </p>
 <p align="center">
-<em>Gif 1: gráfico do funcionamento do método.</em>
+<em>Gif 1: Diagama do funcionamento do método de stopwords.</em>
 </p>
 
 <p align="center">
-<img src="https://github.com/celzin/Corretor-de-Texto/assets/50600414/1fec204a-9084-476b-88f1-b2c772149025" width="500"/> 
+<img src="https://github.com/celzin/Corretor-de-Texto/assets/50600414/1fec204a-9084-476b-88f1-b2c772149025" width="700"/> 
 </p>
 <p align="center">
-<em>Gif 2: gráfico do funcionamento do método.</em>
+<em>Gif 2: Diagama do funcionamento do remoção de expressões.</em>
 </p>
-
-O segundo gif representa o funcionamento passo a passo de como é feito o tratamento e a remoção das `expressoes`
 
 </div>
 
