@@ -478,14 +478,17 @@ Em resumo, as medições mostraram que o tempo de processamento varia de acordo 
 
 <div align="justify">
 
-Em conclusão, o projeto de Corretor de Texto apresentado oferece um conjunto de ferramentas e recursos que podem ajudar os usuários de diversas maneiras. Ao utilizar esse corretor, os usuários podem aprimorar a qualidade de seus textos, melhorar a gramática e ortografia, além de aperfeiçoar a clareza e a coesão do conteúdo escrito.
+Em resumo, nota-se o programa é dividido em três partes principais: análise do texto, geração de relatório e contagem de expressões. Cada parte é medida em termos de tempo de execução, usando a biblioteca time.h para calcular o tempo decorrido em milissegundos.
 
-Com o Corretor de Texto, os usuários têm acesso a um algoritmo eficiente que é capaz de identificar e sugerir correções para erros comuns, como erros ortográficos, concordância verbal, uso adequado de pontuação e estruturação de frases. Essa ferramenta pode ser particularmente útil para estudantes, escritores e qualquer pessoa que deseje melhorar sua habilidade de comunicação escrita.
+Analisando as tabelas, em específico a maior entrada testada [(entrada4.txt)](https://github.com/celzin/Corretor-de-Texto/blob/main/dataset/entrada4.txt), podemos observar que a análise do texto (Análise 1) é a que possui um tempo médio dentre as demais, levando em média 561.540 milissegundos para ser concluída. Isso indica que o processamento dos parágrafos e a remoção das stopwords estão sendo realizados de forma eficiente.
 
-Além disso, o projeto de Corretor de Texto oferece uma abordagem flexível e personalizável, permitindo que os usuários ajustem as configurações conforme suas necessidades e preferências. Isso significa que o corretor pode ser adaptado a diferentes estilos de escrita, vocabulários específicos e até mesmo a diferentes idiomas, ampliando ainda mais o seu alcance e utilidade.
+A geração de relatório e a contagem de palavras (Análise 2) é a parte que consome mais tempo em comparação com as outras etapas, levando em média 14884.46 milissegundos para ser concluída. Isso sugere que a geração do relatório e a contagem de palavras podem ser otimizadas para melhorar o desempenho geral do programa.
 
-Em resumo, o projeto de Corretor de Texto oferece uma solução para melhorar a qualidade da escrita. Com suas funcionalidades avançadas, flexibilidade e recursos de aprendizado, ele pode ser uma ferramenta indispensável para usuários de todas as áreas que desejam aprimorar sua comunicação escrita, garantindo textos mais claros, coerentes e profissionais.
+A contagem de expressões (Análise 3) é a etapa mais rápida, levando em média 25.859 milissegundos para ser concluída. Isso indica que a busca e contagem das expressões no texto estão sendo executadas de forma eficiente.
 
+No geral, o tempo total de execução do programa pode variar dependendo do tamanho do arquivo de entrada e da quantidade de dados a serem processados. É importante notar que o desempenho do programa pode ser influenciado por fatores como a complexidade dos algoritmos utilizados e a eficiência das estruturas de dados empregadas.
+
+Com base nessas informações, podemos concluir que o programa tem um desempenho aceitável para a análise de texto e contagem de expressões. No entanto, a geração de relatório e a contagem de palavras podem ser áreas de melhoria para otimizar o tempo de execução e a eficiência do programa. Seria interessante investigar se há oportunidades de otimização nessas etapas, como a utilização de algoritmos mais eficientes ou a implementação de estruturas de dados mais adequadas.
 </div>
 
 # Compilação e Execução 🔄
