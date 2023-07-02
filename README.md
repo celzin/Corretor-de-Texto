@@ -11,7 +11,7 @@
 
 Para obter informações mais detalhadas sobre o projeto acesse a [**Wiki**](https://github.com/celzin/Corretor-de-Texto/wiki). 
 
-Lá, será encontrado a documentação completa, instruções de execução e detalhes sobre as estruturas de dados e algoritmos utilizados, dentre outros aspectos relevantes do projeto.
+Na Wiki, você terá acesso à documentação completa, instruções de execução e detalhes sobre as estruturas de dados, algoritmos utilizados e outros aspectos relevantes do projeto.
 
 </div>
 
