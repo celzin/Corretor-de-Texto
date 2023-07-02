@@ -80,9 +80,9 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (s)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
-    <th align="center">Análise das Ocorrências de Expressões (s)</th>
+    <th align="center">Análise Parcial dos Parágrafos (ms)</th>
+    <th align="center">Análise Total dos Termos (ms)</th>
+    <th align="center">Análise Total das Ocorrências de Expressões (ms)</th>
   </tr>
   <tr>
     <td align="center">1</td>
@@ -168,9 +168,9 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (s)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
-    <th align="center">Análise das Ocorrências de Expressões (s)</th>
+    <th align="center">Análise Parcial dos Parágrafos (ms)</th>
+    <th align="center">Análise Total dos Termos (ms)</th>
+    <th align="center">Análise Total das Ocorrências de Expressões (ms)</th>
   </tr>
   <tr>
     <td align="center">1</td>
@@ -250,9 +250,9 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (s)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
-    <th align="center">Análise das Ocorrências de Expressões (s)</th>
+    <th align="center">Análise Parcial dos Parágrafos (ms)</th>
+    <th align="center">Análise Total dos Termos (ms)</th>
+    <th align="center">Análise Total das Ocorrências de Expressões (ms)</th>
   </tr>
   <tr>
     <td align="center">1</td>
@@ -338,9 +338,9 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
 <tbody>
   <tr>
     <th align="center">Medições</th>
-    <th align="center">Análise dos Parágrafos do Texto (s)</th>
-    <th align="center">Análise dos Termos Não-Stop-Words (s)</th>
-    <th align="center">Análise das Ocorrências de Expressões (s)</th>
+    <th align="center">Análise Parcial dos Parágrafos (ms)</th>
+    <th align="center">Análise Total dos Termos (ms)</th>
+    <th align="center">Análise Total das Ocorrências de Expressões (ms)</th>
   </tr>
   <tr>
     <td align="center">1</td>
@@ -456,10 +456,10 @@ Para cada entrada, foram executadas 10 iterações utilizando com cada uma das e
   </tr>
   <tr>
     <td align="center"><b>Tempo Total</b></td>
-    <td align="center"><b>0.00</b></td>
-    <td align="center"><b>0.00</b></td>
-    <td align="center"><b>0.00</b></td>
-    <td align="center"><b>0.00</b></td>
+    <td align="center"><b>3.174</b></td>
+    <td align="center"><b>2.702</b></td>
+    <td align="center"><b>1695.928</b></td>
+    <td align="center"><b>15571.869</b></td>
   </tr>
 </tbody>
 </table>
