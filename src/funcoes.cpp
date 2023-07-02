@@ -332,7 +332,33 @@ void analisarExpressoesTexto(const vector<vector<vector<pair<int, string>>>> &pa
         const auto &expressaoInfo = expressoesMap[expressao];
         if (expressaoInfo.second > 0) {
             outputFile << setw(0) << expressao;
-            outputFile << setw(70) << expressaoInfo.first;
+            //outputFile << setw(70) << expressaoInfo.first;
+            //outputFile << setw(20) << expressaoInfo.second << "\n";
+
+            // Construir a string das linhas separadas por vírgula
+            string linhasExpressao;
+            bool firstLine = true;
+            for (const auto &paragrafo : paragrafosMapeados) {
+                for (const auto &sentenca : paragrafo) {
+                    string sentencaTexto;
+                    for (const auto &palavra : sentenca) {
+                        sentencaTexto += palavra.second + " ";
+                    }
+
+                    size_t posicao = 0;
+                    while ((posicao = sentencaTexto.find(expressao, posicao)) != string::npos) {
+                        int linha = sentenca[0].first;
+                        if (!firstLine) {
+                            linhasExpressao += ", ";
+                        }
+                        linhasExpressao += to_string(linha);
+                        posicao += expressao.length();
+                        firstLine = false;
+                    }
+                }
+            }
+
+            outputFile << setw(70) << linhasExpressao;
             outputFile << setw(20) << expressaoInfo.second << "\n";
         }
     }
