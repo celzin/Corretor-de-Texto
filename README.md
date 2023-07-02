@@ -47,6 +47,7 @@ No geral, a implementação desse código demonstra o uso de estruturas de dados
 ## Representação gráfica :camera:
 
 <div align="justify">
+	
 Foram feitos dois gifs de  representações gráficas onde foi possível representar ideias do código final, a primeira representação abaixo demonstra o funcionamento passo a passo de como é feito o tratamento da e remoção das `stopWords`.
 
 <br><br>
